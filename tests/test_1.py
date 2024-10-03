@@ -1,6 +1,6 @@
 import unittest
 from src.FinancePage import FinancePage
-from src.test_util import StockTestBase
+from src.stocktestbase import StockTestBase
 
 class StockTest1(StockTestBase):
     def test1(self):

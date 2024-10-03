@@ -1,6 +1,6 @@
 import unittest
 from src.FinancePage import FinancePage
-from src.test_util import StockTestBase
+from src.stocktestbase import StockTestBase
 
 class StockTest3(StockTestBase):
     # 3. Print all stock symbols in the page data
