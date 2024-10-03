@@ -10,8 +10,7 @@ on:
         description: 'Name of the test file to run'
         required: false
         default: 'test_1'
-
-      run_all_tests: 
+      run_all_tests:
         description: 'Run all tests'
         required: false
         default: 'false'
@@ -43,4 +42,9 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-          python -m pytest tests/${{ github.event.inputs.test_name }}.py
+          if [ "${{ github.event.inputs.run_all_tests }}" == "true" ]
+          then
+            python -m pytest
+          else
+            python -m pytest tests/${{ github.event.inputs.test_name }}.py
+          fi
